@@ -1,11 +1,3 @@
-texto = 'ABCDE'
-chave = 2
-
-minusculas = 'abcdefghijklmnopqrstuvwxyz'
-maiusculas = 'ABDCEFGHIJKLMNOPQRSTUVWXYZ'
-
-cifra = ''
-
 def cifrar_caractere(caractere, seq, chave):
     indice_atual = seq.index(caractere)
     novo_indice = indice_atual + chave
@@ -15,6 +7,13 @@ def cifrar_caractere(caractere, seq, chave):
         novo_indice = novo_indice + len(seq)
     return seq[novo_indice]
 
+texto = 'aprendendo python'
+chave = 4
+
+minusculas = 'abcdefghijklmnopqrstuvwxyz'
+maiusculas = 'ABDCEFGHIJKLMNOPQRSTUVWXYZ'
+
+cifra = ''
 for caractere in texto:
     if caractere in minusculas:
         caractere_cifra = cifrar_caractere(caractere, minusculas, chave)
@@ -22,5 +21,6 @@ for caractere in texto:
         caractere_cifra = cifrar_caractere(caractere, maiusculas, chave)
     else:
         caractere_cifra = caractere
-    cifra += caractere
+    cifra += caractere_cifra
 
+print(cifra)
